@@ -89,21 +89,22 @@ export default function Navbar() {
           </div>
 
           {/* Right side */}
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1.5">
             <button
               onClick={() => setTableModalOpen(true)}
-              className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg transition-colors ${
+              className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                 hasTable
-                  ? 'text-black bg-black/5 hover:bg-black/10'
-                  : 'text-black/40 hover:text-black/60 hover:bg-black/5'
+                  ? 'bg-black text-brand hover:bg-black/80'
+                  : 'text-black/50 hover:text-black hover:bg-black/5'
               }`}
             >
-              <MdTableRestaurant size={18} />
-              {hasTable && (
-                <span className="bg-black text-brand text-[10px] font-bold rounded w-5 h-5 flex items-center justify-center">
-                  {tableNumber}
-                </span>
-              )}
+              <MdTableRestaurant size={16} />
+              <span>
+                {hasTable
+                  ? `${lang === 'en' ? 'Table' : 'Mesa'} ${tableNumber}`
+                  : lang === 'en' ? 'Table' : 'Mesa'
+                }
+              </span>
             </button>
             <button
               onClick={toggleLang}
