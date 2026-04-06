@@ -45,7 +45,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-3xl">
         <img
-          src={`${BASE}la-mafia-logo-4.webp`}
+          src={`${BASE}la-mafia-logo-5.webp`}
           alt="La Mafia Burguer"
           className="w-72 md:w-[28rem] mx-auto mb-2 animate-neon-pulse"
         />
