@@ -92,19 +92,17 @@ export default function Navbar() {
           <div className="flex items-center gap-1.5">
             <button
               onClick={() => setTableModalOpen(true)}
-              className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+              className={`flex items-center gap-1 px-2 py-1.5 rounded-lg text-[11px] sm:text-xs font-medium transition-colors ${
                 hasTable
                   ? 'bg-black text-brand hover:bg-black/80'
                   : 'text-black/50 hover:text-black hover:bg-black/5'
               }`}
             >
-              <MdTableRestaurant size={16} />
-              <span>
-                {hasTable
-                  ? `${lang === 'en' ? 'Table' : 'Mesa'} ${tableNumber}`
-                  : lang === 'en' ? 'Table' : 'Mesa'
-                }
-              </span>
+              <MdTableRestaurant size={14} className="sm:w-4 sm:h-4" />
+              {hasTable
+                ? <span>{lang === 'en' ? 'T' : 'M'}<span className="hidden sm:inline">{lang === 'en' ? 'able' : 'esa'}</span> {tableNumber}</span>
+                : <span className="hidden sm:inline">{lang === 'en' ? 'Table' : 'Mesa'}</span>
+              }
             </button>
             <button
               onClick={toggleLang}
