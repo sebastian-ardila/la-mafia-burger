@@ -1,7 +1,7 @@
 export const business = {
   name: 'La Mafia Burguer',
   slogan: 'Un crimen que vale la pena comerse',
-  sloganEn: 'A crime worth eating',
+  sloganEn: 'A crime worth every bite',
   whatsapp: '+573045297102',
   whatsappDisplay: '+57 304 529 7102',
   email: '',

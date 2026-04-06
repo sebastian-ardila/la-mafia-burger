@@ -11,7 +11,7 @@
     "home": "Home"
   },
   "hero": {
-    "tagline": "A crime worth eating",
+    "tagline": "A crime worth every bite",
     "viewMenu": "See our menu",
     "reserve": "Reserve a table",
     "reviewGoogle": "Review on Google",
@@ -133,7 +133,7 @@
     "viewMenu": "See menu"
   },
   "footer": {
-    "subtitle": "A crime worth eating",
+    "subtitle": "A crime worth every bite",
     "schedule": "Hours",
     "closed": "Closed",
     "followUs": "Follow Us",
