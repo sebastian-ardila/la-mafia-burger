@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { List, X, ForkKnife, CalendarBlank, Clock, BookOpen, EnvelopeSimple, ShoppingCart, Translate, PicnicTable } from '@phosphor-icons/react'
+import { List, X, ForkKnife, CalendarBlank, Clock, BookOpen, EnvelopeSimple, ShoppingCart, Translate } from '@phosphor-icons/react'
+import { MdTableRestaurant } from 'react-icons/md'
 import { useCart } from '@/context/CartContext'
 import { useTable } from '@/context/TableContext'
 import TableModal from './TableModal'
@@ -97,7 +98,7 @@ export default function Navbar() {
                   : 'text-black/40 hover:text-black/60 hover:bg-black/5'
               }`}
             >
-              <PicnicTable size={16} weight={hasTable ? 'fill' : 'regular'} />
+              <MdTableRestaurant size={18} />
               {hasTable && (
                 <span className="bg-black text-brand text-[10px] font-bold rounded w-5 h-5 flex items-center justify-center">
                   {tableNumber}
