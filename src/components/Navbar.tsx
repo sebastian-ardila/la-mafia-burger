@@ -91,19 +91,18 @@ export default function Navbar() {
           <div className="flex items-center gap-1">
             <button
               onClick={() => setTableModalOpen(true)}
-              className={`flex items-center gap-1 px-2 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
+              className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg transition-colors ${
                 hasTable
                   ? 'text-black bg-black/5 hover:bg-black/10'
                   : 'text-black/40 hover:text-black/60 hover:bg-black/5'
               }`}
             >
-              <Table size={14} weight={hasTable ? 'fill' : 'regular'} />
-              <span className="hidden sm:inline">
-                {hasTable
-                  ? `${i18n.language === 'en' ? 'Table' : 'Mesa'} ${tableNumber}`
-                  : i18n.language === 'en' ? 'Table' : 'Mesa'
-                }
-              </span>
+              <Table size={16} weight={hasTable ? 'fill' : 'regular'} />
+              {hasTable && (
+                <span className="bg-black text-brand text-[10px] font-bold rounded w-5 h-5 flex items-center justify-center">
+                  {tableNumber}
+                </span>
+              )}
             </button>
             <button
               onClick={toggleLang}

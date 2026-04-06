@@ -15,14 +15,14 @@ export default function CartFloating() {
   return (
     <button
       onClick={() => setIsCartOpen(true)}
-      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-6 py-3 bg-black text-brand rounded-full shadow-lg hover:bg-black/90 transition-colors"
+      className="fixed bottom-4 left-4 right-4 sm:left-1/2 sm:right-auto sm:bottom-6 sm:-translate-x-1/2 sm:w-auto z-50 flex items-center justify-between gap-3 px-5 py-3.5 bg-black text-brand rounded-2xl shadow-xl hover:bg-black/90 transition-colors whitespace-nowrap"
     >
-      <ShoppingCart size={22} weight="fill" />
-      <span className="font-semibold">
+      <ShoppingCart size={20} weight="fill" className="flex-shrink-0" />
+      <span className="font-semibold text-sm">
         {totalItems} {totalItems === 1 ? t('cart.product') : t('cart.products')}
       </span>
-      <span className="w-px h-5 bg-brand/30" />
-      <span className="font-bold">{formatPrice(totalPrice)}</span>
+      <span className="w-px h-4 bg-brand/30 flex-shrink-0" />
+      <span className="font-bold text-sm">{formatPrice(totalPrice)}</span>
     </button>
   )
 }

@@ -60,17 +60,17 @@ export default function Hero() {
         </p>
 
         {/* CTA buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+        <div className="flex flex-row items-center justify-center gap-3 mb-6">
           <button
             onClick={scrollToMenu}
-            className="flex items-center gap-2 px-8 py-3 bg-brand text-black font-semibold rounded-lg hover:bg-brand-dark transition-colors"
+            className="flex items-center gap-1.5 px-5 py-2.5 sm:px-8 sm:py-3 bg-brand text-black font-semibold rounded-lg hover:bg-brand-dark transition-colors text-sm sm:text-base"
           >
-            <ArrowDown size={20} weight="bold" />
+            <ArrowDown size={18} weight="bold" />
             {t('hero.viewMenu')}
           </button>
           <Link
             to={langPath('/reservas')}
-            className="flex items-center gap-2 px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors"
+            className="flex items-center gap-1.5 px-5 py-2.5 sm:px-8 sm:py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm sm:text-base"
           >
             {t('hero.reserve')}
           </Link>
