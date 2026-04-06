@@ -3,8 +3,8 @@ import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { List, X, ForkKnife, CalendarBlank, Clock, BookOpen, EnvelopeSimple, ShoppingCart, Translate, PicnicTable } from '@phosphor-icons/react'
 import { useCart } from '@/context/CartContext'
-import { usePicnicTable } from '@/context/PicnicTableContext'
-import PicnicTableModal from './PicnicTableModal'
+import { useTable } from '@/context/TableContext'
+import TableModal from './TableModal'
 
 const BASE = import.meta.env.BASE_URL
 
@@ -20,9 +20,9 @@ export default function Navbar() {
   const { t, i18n } = useTranslation()
   const location = useLocation()
   const { totalItems, setIsCartOpen } = useCart()
-  const { tableNumber, hasPicnicTable } = usePicnicTable()
+  const { tableNumber, hasTable } = useTable()
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [tableModalOpen, setPicnicTableModalOpen] = useState(false)
+  const [tableModalOpen, setTableModalOpen] = useState(false)
   const [logoRevealed, setLogoRevealed] = useState(false)
   const logoTimerRef = useState<ReturnType<typeof setTimeout> | null>(null)
 
@@ -90,15 +90,15 @@ export default function Navbar() {
           {/* Right side */}
           <div className="flex items-center gap-1">
             <button
-              onClick={() => setPicnicTableModalOpen(true)}
+              onClick={() => setTableModalOpen(true)}
               className={`flex items-center gap-1 px-1.5 py-1.5 rounded-lg transition-colors ${
-                hasPicnicTable
+                hasTable
                   ? 'text-black bg-black/5 hover:bg-black/10'
                   : 'text-black/40 hover:text-black/60 hover:bg-black/5'
               }`}
             >
-              <PicnicTable size={16} weight={hasPicnicTable ? 'fill' : 'regular'} />
-              {hasPicnicTable && (
+              <PicnicTable size={16} weight={hasTable ? 'fill' : 'regular'} />
+              {hasTable && (
                 <span className="bg-black text-brand text-[10px] font-bold rounded w-5 h-5 flex items-center justify-center">
                   {tableNumber}
                 </span>
@@ -190,7 +190,7 @@ export default function Navbar() {
         </div>
       )}
 
-      {tableModalOpen && <PicnicTableModal onClose={() => setPicnicTableModalOpen(false)} />}
+      {tableModalOpen && <TableModal onClose={() => setTableModalOpen(false)} />}
     </>
   )
 }
