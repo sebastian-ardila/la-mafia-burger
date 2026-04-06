@@ -1,0 +1,148 @@
+{
+  "nav": {
+    "menu": "Carta",
+    "reservations": "Reservas",
+    "schedule": "Horarios",
+    "history": "Historia",
+    "contact": "Contacto",
+    "cart": "Carrito"
+  },
+  "breadcrumb": {
+    "home": "Inicio"
+  },
+  "hero": {
+    "tagline": "Un crimen que vale la pena comerte",
+    "viewMenu": "Ver nuestra carta",
+    "reserve": "Reservar mesa",
+    "reviewGoogle": "Opinar en Google",
+    "reviewTripadvisor": "Opinar en TripAdvisor"
+  },
+  "menu": {
+    "title": "Nuestra Carta",
+    "viewProduct": "Ver plato",
+    "add": "Agregar",
+    "solo": "Sola",
+    "combo": "Combo",
+    "chooseDrink": "Elige tu bebida",
+    "ingredients": "Ingredientes",
+    "close": "Cerrar"
+  },
+  "cart": {
+    "title": "Tu Pedido",
+    "empty": "Tu carrito está vacío",
+    "total": "Total",
+    "continue": "Continuar",
+    "deleteOrder": "Eliminar tu pedido",
+    "back": "Volver",
+    "step2Title": "Datos del pedido",
+    "name": "Nombre",
+    "namePlaceholder": "Tu nombre",
+    "paymentMethod": "Método de pago",
+    "transfer": "Transferencia",
+    "card": "Tarjeta",
+    "cash": "Efectivo",
+    "orderType": "Tipo de pedido",
+    "dineIn": "En mesa",
+    "delivery": "Domicilio",
+    "sendWhatsapp": "Enviar pedido por WhatsApp",
+    "summary": "Resumen del pedido",
+    "requiredFields": "Completa los campos requeridos",
+    "nameRequired": "Ingresa tu nombre",
+    "paymentRequired": "Selecciona un método de pago",
+    "orderTypeRequired": "Selecciona el tipo de pedido",
+    "products": "productos",
+    "product": "producto",
+    "comboWith": "Combo con",
+    "unit": "Sola"
+  },
+  "reservations": {
+    "title": "Reservar Mesa",
+    "name": "Nombre",
+    "namePlaceholder": "Tu nombre completo",
+    "people": "Personas",
+    "date": "Fecha",
+    "selectDate": "Seleccionar fecha",
+    "selectDateFirst": "Selecciona una fecha primero",
+    "time": "Hora",
+    "comments": "Comentarios adicionales",
+    "commentsPlaceholder": "Alguna petición especial...",
+    "submit": "Enviar reserva por WhatsApp",
+    "requiredFields": "Completa los campos requeridos",
+    "nameRequired": "Ingresa tu nombre",
+    "dateRequired": "Selecciona una fecha",
+    "timeRequired": "Selecciona una hora",
+    "closedDay": "No hay horarios disponibles para este día",
+    "closedDayBorder": "No hay servicio este día. Selecciona otra fecha.",
+    "morning": "Mañana",
+    "afternoon": "Tarde",
+    "evening": "Noche",
+    "scheduleTitle": "Horarios",
+    "locationTitle": "Ubicación",
+    "howToGet": "Cómo llegar",
+    "googleMaps": "Google Maps",
+    "waze": "Waze",
+    "appleMaps": "Apple Maps"
+  },
+  "schedule": {
+    "title": "Horarios y Ubicación",
+    "scheduleTitle": "Nuestros Horarios",
+    "closed": "Cerrado",
+    "location": "Ubicación",
+    "deliveryText": "Domicilios a todo Pereira",
+    "howToGet": "Cómo llegar",
+    "reserveTable": "Reservar mesa",
+    "orderWhatsapp": "Pedir por WhatsApp"
+  },
+  "history": {
+    "title": "Nuestra Historia",
+    "p1": "La Mafia Burguer nació de la pasión por crear hamburguesas artesanales con un toque único. En las calles de Pereira, un grupo de amigos decidió que la ciudad merecía una experiencia gastronómica diferente.",
+    "p2": "Cada ingrediente es seleccionado cuidadosamente, desde nuestro pan artesanal horneado diariamente hasta las salsas secretas que hacen de cada mordisco un momento inolvidable.",
+    "p3": "Hoy, La Mafia Burguer es más que un restaurante. Es un lugar donde la familia, los amigos y los buenos momentos se encuentran alrededor de la mejor hamburguesa de la ciudad.",
+    "ctaText": "Conoce nuestras creaciones",
+    "viewMenu": "Ver carta"
+  },
+  "contact": {
+    "title": "Contacto",
+    "name": "Nombre",
+    "namePlaceholder": "Tu nombre",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "tu@email.com",
+    "phone": "Teléfono (opcional)",
+    "phonePlaceholder": "Tu teléfono",
+    "reason": "Motivo de contacto",
+    "reasonPlaceholder": "Selecciona un motivo",
+    "reasons": {
+      "franchise": "Franquicia",
+      "supplier": "Proveedor",
+      "collaboration": "Colaboración",
+      "events": "Eventos",
+      "birthday": "Cumpleaños",
+      "other": "Otros"
+    },
+    "message": "Mensaje",
+    "messagePlaceholder": "Escribe tu mensaje...",
+    "submit": "Enviar mensaje",
+    "requiredFields": "Completa los campos requeridos",
+    "nameRequired": "Ingresa tu nombre",
+    "emailRequired": "Ingresa tu correo electrónico",
+    "reasonRequired": "Selecciona un motivo",
+    "messageRequired": "Escribe un mensaje"
+  },
+  "cta": {
+    "text": "Descubre todo lo que tenemos para ti",
+    "viewMenu": "Ver carta"
+  },
+  "footer": {
+    "subtitle": "Un crimen que vale la pena comerte",
+    "schedule": "Horarios",
+    "closed": "Cerrado",
+    "followUs": "Síguenos",
+    "deliveryText": "Domicilios a todo Pereira",
+    "rights": "Todos los derechos reservados",
+    "madeBy": "Sitio web creado por"
+  },
+  "lang": {
+    "es": "ES",
+    "en": "EN"
+  }
+}
