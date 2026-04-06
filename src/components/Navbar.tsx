@@ -98,11 +98,8 @@ export default function Navbar() {
                   : 'text-black/50 hover:text-black hover:bg-black/5'
               }`}
             >
-              <MdTableRestaurant size={14} className="sm:w-4 sm:h-4" />
-              {hasTable
-                ? <span>{lang === 'en' ? 'T' : 'M'}<span className="hidden sm:inline">{lang === 'en' ? 'able' : 'esa'}</span> {tableNumber}</span>
-                : <span className="hidden sm:inline">{lang === 'en' ? 'Table' : 'Mesa'}</span>
-              }
+              <MdTableRestaurant size={14} />
+              <span>{hasTable ? `${lang === 'en' ? 'Table' : 'Mesa'} ${tableNumber}` : lang === 'en' ? 'Table' : 'Mesa'}</span>
             </button>
             <button
               onClick={toggleLang}
