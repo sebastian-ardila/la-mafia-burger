@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { X, QrCode, ArrowLeft, Camera } from '@phosphor-icons/react'
+import { X, QrCode, ArrowLeft, Camera, CheckCircle } from '@phosphor-icons/react'
 import { MdTableRestaurant } from 'react-icons/md'
 import { useTable } from '@/context/TableContext'
 
@@ -14,7 +14,8 @@ export default function TableModal({ onClose }: Props) {
   const { i18n } = useTranslation()
   const isEn = i18n.language === 'en'
   const { tableNumber, setTableNumber, hasTable } = useTable()
-  const [mode, setMode] = useState<'menu' | 'qr'>('menu')
+  const [mode, setMode] = useState<'menu' | 'qr' | 'confirmed'>('menu')
+  const [confirmedNumber, setConfirmedNumber] = useState('')
   const [qrError, setQrError] = useState('')
   const scannerRef = useRef<HTMLDivElement>(null)
   const scannerInstanceRef = useRef<any>(null)
@@ -27,6 +28,14 @@ export default function TableModal({ onClose }: Props) {
   const handleClear = () => {
     setTableNumber('')
     onClose()
+  }
+
+  const showConfirmation = (mesa: string) => {
+    setConfirmedNumber(mesa)
+    setMode('confirmed')
+    setTimeout(() => {
+      onClose()
+    }, 2000)
   }
 
   const stopScanner = async () => {
@@ -43,10 +52,8 @@ export default function TableModal({ onClose }: Props) {
     setMode('qr')
     setQrError('')
 
-    // Dynamic import to avoid loading on desktop
     const { Html5Qrcode } = await import('html5-qrcode')
 
-    // Wait for DOM
     await new Promise(r => setTimeout(r, 100))
 
     if (!scannerRef.current) return
@@ -62,14 +69,12 @@ export default function TableModal({ onClose }: Props) {
         { facingMode: 'environment' },
         { fps: 10, qrbox: { width: 200, height: 200 } },
         (decodedText: string) => {
-          // Try to extract mesa number from URL or plain number
           let mesa = ''
           try {
             const url = new URL(decodedText)
             const params = new URLSearchParams(url.hash.split('?')[1] || url.search)
             mesa = params.get('mesa') || ''
           } catch {
-            // If not a URL, check if it's just a number
             if (/^\d+$/.test(decodedText.trim())) {
               mesa = decodedText.trim()
             }
@@ -78,22 +83,38 @@ export default function TableModal({ onClose }: Props) {
           if (mesa) {
             stopScanner()
             setTableNumber(mesa)
-            onClose()
+            showConfirmation(mesa)
           }
         },
-        () => {} // ignore scan failures
+        () => {}
       )
     } catch (err) {
       setQrError(isEn ? 'Could not access camera. Please allow camera permissions.' : 'No se pudo acceder a la cámara. Permite el acceso a la cámara.')
     }
   }
 
-  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
+  const isMobile = /Android|iPhone|iPad|iPod|HarmonyOS|Huawei|HUAWEI/i.test(navigator.userAgent)
 
-  // Cleanup on unmount
   useEffect(() => {
     return () => { stopScanner() }
   }, [])
+
+  // Fullscreen confirmation overlay
+  if (mode === 'confirmed') {
+    return (
+      <div className="fixed inset-0 z-[80] flex items-center justify-center bg-black/90 animate-fade-in">
+        <div className="text-center px-8">
+          <CheckCircle size={72} weight="fill" className="mx-auto text-brand mb-4" />
+          <p className="text-brand/60 text-sm uppercase tracking-widest mb-2">
+            {isEn ? 'Table assigned' : 'Mesa asignada'}
+          </p>
+          <p className="text-white font-display text-5xl md:text-7xl font-bold">
+            {isEn ? 'Table' : 'Mesa'} {confirmedNumber}
+          </p>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="fixed inset-0 z-[70] flex items-center justify-center">
@@ -127,7 +148,6 @@ export default function TableModal({ onClose }: Props) {
                 </div>
               )}
 
-              {/* Table number grid */}
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wide text-black/50 mb-3">
                   {isEn ? 'Choose a table' : 'Elige una mesa'}
@@ -149,7 +169,6 @@ export default function TableModal({ onClose }: Props) {
                 </div>
               </div>
 
-              {/* QR option - mobile only */}
               {isMobile && (
                 <button
                   onClick={startScanner}
