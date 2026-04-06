@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { X, QrCode, Table, ArrowLeft, Camera } from '@phosphor-icons/react'
+import { X, QrCode, PicnicTable, ArrowLeft, Camera } from '@phosphor-icons/react'
 import { useTable } from '@/context/TableContext'
 
 const TOTAL_TABLES = 10
@@ -105,7 +105,7 @@ export default function TableModal({ onClose }: Props) {
             </button>
           )}
           <h3 className="font-display font-semibold text-lg flex items-center gap-2 flex-1">
-            <Table size={20} weight="duotone" />
+            <PicnicTable size={20} weight="duotone" />
             {mode === 'qr'
               ? (isEn ? 'Scan QR' : 'Escanear QR')
               : (isEn ? 'Select your table' : 'Selecciona tu mesa')
